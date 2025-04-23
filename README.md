@@ -1,129 +1,118 @@
-# fitcheck
+# FitCheck
 
 ## Description
-Our app is designed to make fashion fun by gamifying everyday style and inspiring creativity. Here’s how it works: each night, users receive a theme for the next day’s outfit- think “red” or “denim.” The next day, they share photos of their outfits, and friends vote on who nailed the theme best. It’s like “BeReal,” but for outfits, with a competitive twist.
+Our app makes fashion fun by gamifying everyday style and inspiring creativity. Each night, users receive a theme for the next day’s outfit—think “red” or “denim.” The following day, they share photos of their outfits, and friends vote on who nailed the theme best. It’s like BeReal, but for outfits!
 
-## [Living Document](https://docs.google.com/document/d/1CZu642kOHpgtLdXkNPS8U6OsxPTkgixnqs-X6VRMPes/edit?tab=t.0)
+## Living Document
+[View the detailed plan and progress](https://docs.google.com/document/d/1CZu642kOHpgtLdXkNPS8U6OsxPTkgixnqs-X6VRMPes/edit?tab=t.0)
 
-COMPLETED FEATURES:
-==================================================================================================================
-- User Authentication System
-  * Allow users to create accounts, log in, and log out.
-  * Include user profile picture and username.
-  
-- Daily Outfit Challenges (P0)
-  * Display the daily "piece of clothing/theme" challenge.
-  * Allow users to submit photos of themselves wearing the outfit within the specified time limit.
- 
-- DataBase
-  * Holds all user’s posts and account information (followers, following, number of posts, username) 
-  * Stores all of today’s posts for viewing on friend’s pages
-  * Stores all of user’s posts to date to view on profile
- 
-- Awarding System
-  * Users are able to award hearts to a post
-  * Awards aare kept track of in leaderboard
-  * Awards are restricted on a per day basis
- 
-- Leaderboard and Point Icons (P1) 
-  * Display a leaderboard based on the top three best dressed and/or awarded people and have certain icons and levels based on how many hearts a user has.
+---
 
-- Searching for Friends’ posts (P2)
-  * Users can type in the username of a friend and view a page showing that friend’s post for today. If the friend has not posted today, it shows their account    
-  * information (username, number of followers, number of friends, number of posts to date).
+## Completed Features
+- **User Authentication**: Sign up, log in/out, user profiles with picture and username.
+- **Daily Outfit Challenges (P0)**: Receive a daily theme, submit photos within the time window.
+- **Database**: Stores user info (followers, following, posts count, username) and all outfits.
+- **Awarding System**: Heart-based awards with daily limits; tracked in the leaderboard.
+- **Leaderboard & Badges (P1)**: Shows top three users; badges based on earned hearts.
+- **Friend Search (P2)**: Search by username to view a friend’s latest post and profile stats.
+- **OTP & Account Creation**: Fully functional one-time-passcode flow.
+- **Backend**: Complete data storage and retrieval.
 
-- Functional OTP/account creation
-- Functional backend (data storage/retreival)
+---
 
-  -------------------
-CURRENT SATISFIED USE CASE:
-Goal:
-- Posting the daily photo of your fit!
-Actors:
-- Primary Actor - The user taking the photo. 
-- Database - Stores users photos. 
-- Backend - Processes photo. 
-Triggers:
-- User opens the app and views the “FitPiece” of the day, presses the camera button to take a photo of them in their fit or upload a photo. 
-Preconditions:
-- User is signed in to the app. 
-- Daily challenge is open and active.
-Postconditions (success scenario):
-- Photo is successfully uploaded in the database and processed by the backend.
-- From there, the user can view their photo, and like/comment.
+## Current Use Case
+- **Goal**: Post your daily outfit photo!
+- **Primary Actor**: Signed-in user.
+- **Trigger**: User opens the app and taps the camera/upload button on the daily theme screen.
+- **Preconditions**: User is authenticated; daily challenge is active.
+- **Postconditions**: Photo uploads, processes, and appears on feed for likes/comments.
 
+---
 
+## Getting Started
+Follow these steps to install Flutter, Dart, and run FitCheck locally.
 
-TO RUN:
+### 1. Install Prerequisites
+1. **Flutter & Dart SDK**
+   - Visit [Flutter Install](https://flutter.dev/docs/get-started/install) and follow the guide for your OS.
+   - Ensure Flutter’s `bin` directory is added to your PATH.
+   - Verify setup:
+     ```bash
+     flutter doctor
+     ```
+2. **IDE**
+   - **Visual Studio Code**: Install the Flutter and Dart extensions.
+   - **Android Studio**: Install the Flutter plugin and Android SDK components.
+3. **iOS (macOS only)**
+   - Install Xcode from the App Store.
+   - After Xcode install:
+     ```bash
+     sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+     ```
 
-Prerequisites
-__________________
-Ensure you have the following installed:
-- Flutter SDK
-- Dart
-- Android Studio or Visual Studio Code (with Flutter extensions)
-- Xcode (for iOS development)
-  
-Setup
-__________________
-Clone the repository:
-- git clone <repository_url>
-- cd flutter_app
-Install dependencies:
-- flutter pub get
+### 2. Clone the Repository
+```bash
+git clone https://github.com/your-username/fitcheck.git
+cd fitcheck
+```
 
-Build Instructions
-- For Android:
-  - flutter build apk
-For iOS:
-  - flutter build ios
+### 3. Fetch Dependencies
+```bash
+flutter pub get
+```
 
-Testing Instructions
-______________________
+### 4. Build the App
+- **Android (APK)**
+  ```bash
+  flutter build apk
+  ```  
+- **iOS**
+  ```bash
+  flutter build ios
+  ```
+
+### 5. Run the App
+- **Android Emulator / Physical Device**
+  ```bash
+  flutter run
+  ```
+- **iOS Simulator**
+  ```bash
+  flutter run -d ios
+  ```
+- **List Available Devices**
+  ```bash
+  flutter devices
+  ```
+
+---
+
+## Testing
 Run unit and widget tests:
-  - flutter test
+```bash
+flutter test
+```
 
-Running the App
-__________________
-For Android Emulator (Android Studio):
-- flutter run
-For iOS Simulator:
-- flutter run -d ios
-For a connected physical device:
-- flutter run -d <device_id>
+---
 
-Folder Structure
-__________________
-flutter_app/
-│── lib/                 # Main application code
+## Project Structure
+```
+fitcheck/
+├── android/        # Android platform configuration
+├── ios/            # iOS platform configuration
+├── lib/            # Dart code
+│   ├── main.dart   # App entry point
+│   ├── screens/    # UI screens
+│   ├── widgets/    # Reusable widgets
+│   └── services/   # Business logic & API calls
+├── assets/         # Images, fonts, etc.
+├── test/           # Unit & widget tests
+└── pubspec.yaml    # Dependencies & project metadata
+```
 
-│   ├── main.dart        # Entry point of the application (view posts)
-
-│   ├── screens/         # UI screens of the app
-
-│   ├── widgets/         # Reusable widgets
-
-│   ├── services/        # API and business logic services
-
-│── assets/              # Static assets (images, fonts, etc.)
-
-│── test/                # Unit and widget tests
-
-│── pubspec.yaml         # Flutter project configuration and dependencies
-
-│── android/             # Android-specific configuration
-
-│── ios/                 # iOS-specific configuration
-
-│── web/                 # Web-related files (if applicable)
-
-│── README.md            # Project documentation
+---
 
 ## 📌 Beta++ Release
+- **Tag:** [v2.0-beta++](https://github.com/chaafenr/fitcheck/releases/tag/v1.0-beta++)
+- **Last Commit:** March 11, 2025
 
-This is the **Beta++ release** of FitCheck, including all current documentation and features.
-
-**Release Tag:** [v2.0-final release](https://github.com/chaafenr/fitcheck/releases/tag/v1.0-beta++)  
-**Last Commit Date: 3/11/2025
-
--> README.md 
